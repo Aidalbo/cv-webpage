@@ -1,13 +1,39 @@
 import streamlit as st
+from pathlib import Path
 
-st.title("My new app ❤️", anchor=False)
-st.header("Ich bin eine neue Überschrift 🦁", anchor=False)
-st.subheader("Ich bin eine kleinere Überschrift 😊", anchor=False)
-st.write("Das ist meine Streamlit-App")
+st.markdown("<style> .stAppHeader {display:none;} ul {list-style-type: none; } </style>", unsafe_allow_html=True)
 
-st.markdown("<p> ich bin ein text </p> ", unsafe_allow_html=True)
+def get_file_content_as_bytes(file_path):
+    with open(file_path, "rb") as file:
+        return file.read()
 
-st.markdown("<a herf=https://streamlit.io/>link</a>", unsafe_allow_html=True)
+# Pfad zur PDF-Datei
+file_path = 'lebenslauf.pdf'
+
+# Lese den Inhalt der PDF-Datei als Bytes
+file_bytes = get_file_content_as_bytes(file_path)
+
+left,right = st.columns (2)
+
+left.image("aid.png", width=250)
+
+right.markdown("""
+               <h3>Aid Ajdini</h3>
+               <em>Ich finde IT faszinierend da der breuf sich so hoch entwickle hat daher will ich gerne im IT-Bereich tätig sein. </em>
+            
+
+               
+               """,unsafe_allow_html=True)
+
+
+right.download_button(
+        label="📄 Download CV",
+        data=file_bytes,
+        file_name=file_path,
+        mime='application/pdf'
+)
+
+         
 
 st.header("IT-Kompetenzen", anchor=False,divider="blue")
 
@@ -16,34 +42,45 @@ st.markdown("""
             
           💻 Programmierung: Praktische Erfahrung in Python, Entwicklung kleiner Anwendungen und Skripte
             
-          📊 Office-Suite: Versierter Umgang mit Microsoft Word, Excel und PowerPoint
+          📊 Office-Suite: Versierter Umgang mit Microsoft Word und PowerPoint
+         
             
-          💰 Eigene Projekte: Konzeption und Umsetzung verschiedener Projekte inklusive Hosting
-            
-          🏫 Schulprojekte: Erstellung datenbasierter Präsentationen und interaktiver Tabellenkalkulationen
             """,unsafe_allow_html=True)
+
+st.header("Schulbildung", anchor=False,divider="blue")
+st.subheader("FMS Schaumburgergasse",anchor=False)
+st.markdown("""
+            **Schwerpunkt**: Intensive IT-Spezialisierung, Fokus auf modernen Webtechnologin und Wirtschaft
+
+            **Zeitraum** : 2024-laufend
+""")
+
+st.subheader("Mittelschule Georg-Wilhelm-Pabst-Gasse", anchor=False)
+st.write("**Zeitraum** : 2020-2024 ")
+
 
 st.header("Arbeitserfahrung", anchor=False,divider="blue")
 st.markdown("""
-            📕 Berufspraktische Tage 1: Bei XYZ von 18. bis 22. Nov. 2024
+            📕 Berufspraktische Tage 1: Bei MobiNil von 18. bis 22. Nov. 2024
             
             📕 Berufspraktische Tage 2: Bei XYZ von 24. bis 28. Feb. 2025
          """,unsafe_allow_html=True)
 
 st.header("Zusätzliche Qualifikationen", anchor=False,divider="blue")
 st.markdown("""
-         🚄 Schnelle Auffassungsgabe für neue Softwareanwendungen und Technologien
+         🚄 Ich lerne sehr schnell neue Programme und Technologien
+
+         🤼 Ich arbeite gut mit anderen Menschen zusammen.
             
-         🔎  Großes Interesse an der kontinuierlichen Weiterentwicklung im IT-Bereich
+         🗂️ Ich interessiere mich sehr für den IT-Bereich    
             
-         🤼 Teamfähigkeit und Kommunikationsstärke bei gemeinsamen Coding-Projekten
-            """)
+         ⚖️ Ich bin zuverlässig und erledige meine Aufgaben pünktlich
+            
+         🏛️ Selbstständiges Arbeiten und Verantwortung übernehmen liegt mir        """)
 
 st.header("Interessen und Hobby", anchor=False,divider="blue")
 st.markdown("""
-         ⚽ Fußball: Mitglied in einem Fußball-Klub
+         🚀     Immer was neues lernen
             
-         📖 Lesen: Begeisterte Leserin verschiedenster Literatur
-            
-         💡 Schach: Engagiert im Schachklub
+         ⌨️ PC : Videospiele spielen und am PC arbeiten
             """)
