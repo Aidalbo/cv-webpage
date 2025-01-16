@@ -15,7 +15,7 @@ file_bytes = get_file_content_as_bytes(file_path)
 
 left,right = st.columns (2)
 
-left.image("aid.png", width=250)
+left.image("aid1.png", width=250)
 
 right.markdown("""
                <h3>Aid Ajdini</h3>
@@ -24,6 +24,7 @@ right.markdown("""
 
                
                """,unsafe_allow_html=True)
+
 
 
 right.download_button(
@@ -38,7 +39,7 @@ right.download_button(
 st.header("IT-Kompetenzen", anchor=False,divider="blue")
 
 st.markdown("""
-          🌎 Webentwicklung: Fundierte Grundkenntnisse in HTML, CSS und Streamlit (Fullstack-Framework)
+          🌎 Webentwicklung: Fundierte Grundkenntnisse in HTML, CSS und Streamlit 
             
           💻 Programmierung: Praktische Erfahrung in Python, Entwicklung kleiner Anwendungen und Skripte
             
