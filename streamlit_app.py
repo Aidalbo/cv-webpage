@@ -19,7 +19,8 @@ left.image("aid1.png", width=250)
 
 right.markdown("""
                <h3>Aid Ajdini</h3>
-               <em>Ich finde IT faszinierend da der breuf sich so hoch entwickle hat daher will ich gerne im IT-Bereich tätig sein. </em>
+               <em>Ich finde IT faszinierend, weil sich dieser Bereich in den letzten Jahren stark weiterentwickelt hat. 
+               Deshalb möchte ich später gerne im IT-Bereich arbeiten </em>
             
 
                
@@ -49,11 +50,18 @@ st.markdown("""
             """,unsafe_allow_html=True)
 
 st.header("Schulbildung", anchor=False,divider="blue")
+
+st.subheader("HTL MÖDLING",anchor=False)
+st.markdown("""
+            **Schwerpunkt**: Elektrontechnik
+
+            **Zeitraum** : 2025-laufend
+""")
 st.subheader("FMS Schaumburgergasse",anchor=False)
 st.markdown("""
             **Schwerpunkt**: Intensive IT-Spezialisierung, Fokus auf modernen Webtechnologin und Wirtschaft
 
-            **Zeitraum** : 2024-laufend
+            **Zeitraum** : 2024-2025
 """)
 
 st.subheader("Mittelschule Georg-Wilhelm-Pabst-Gasse", anchor=False)
@@ -64,7 +72,7 @@ st.header("Arbeitserfahrung", anchor=False,divider="blue")
 st.markdown("""
             📕 Berufspraktische Tage 1: Bei MobiNil von 18. bis 22. Nov. 2024
             
-            📕 Berufspraktische Tage 2: Bei XYZ von 24. bis 28. Feb. 2025
+            📕 Berufspraktische Tage 2: Bei AUVA von 24. bis 28. Feb. 2025
          """,unsafe_allow_html=True)
 
 st.header("Zusätzliche Qualifikationen", anchor=False,divider="blue")
